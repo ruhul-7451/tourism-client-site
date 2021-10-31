@@ -7,8 +7,11 @@ import axios from 'axios';
 const deleteLogo = <FontAwesomeIcon icon={faTrashAlt} />
 const handleDelete = (id) => {
     const url = `http://localhost:5000/booking/${id}`
-    alert('You are deleting one of your booking')
-    axios.delete(url);
+    const action = window.confirm('You are deleting one of your booking')
+    if (action) {
+        axios.delete(url);
+    }
+
 }
 const Booked = ({ order }) => {
     const { _id, bookingStatus, departure, email, name, packageTitle, phone, totalPerson } = order;
