@@ -5,7 +5,7 @@ const UserRequest = ({ userOrder }) => {
     const { _id, bookingStatus, departure, email, name, packageTitle, phone, totalPerson } = userOrder;
     const handleConfirmation = (id) => {
         console.log('I am clicked', id);
-        const url = `http://localhost:5000/booking/${id}`
+        const url = `https://shrieking-crypt-42705.herokuapp.com/booking/${id}`
         fetch(url, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },

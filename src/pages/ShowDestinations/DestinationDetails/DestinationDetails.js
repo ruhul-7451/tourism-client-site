@@ -13,7 +13,7 @@ const DestinationDetails = () => {
     const [details, setDetails] = useState([]);
     const history = useHistory();
     useEffect(() => {
-        const url = `http://localhost:5000/destination/${id}`
+        const url = `https://shrieking-crypt-42705.herokuapp.com/destination/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setDetails(data))

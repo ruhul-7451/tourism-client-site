@@ -5,7 +5,7 @@ import SingleDestination from './SingleDestination/SingleDestination';
 const ShowDestinations = () => {
     const [showPlaces, setShowPlaces] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/destination')
+        fetch('https://shrieking-crypt-42705.herokuapp.com/destination')
             .then(res => res.json())
             .then(data => setShowPlaces(data))
     }, []);

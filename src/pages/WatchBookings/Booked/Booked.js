@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const deleteLogo = <FontAwesomeIcon icon={faTrashAlt} />
 const handleDelete = (id) => {
-    const url = `http://localhost:5000/booking/${id}`
+    const url = `https://shrieking-crypt-42705.herokuapp.com/booking/${id}`
     const action = window.confirm('You are deleting one of your booking')
     if (action) {
         axios.delete(url);

@@ -5,7 +5,7 @@ import Booked from './Booked/Booked';
 const WatchBooking = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://shrieking-crypt-42705.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])

@@ -8,7 +8,7 @@ const Destinations = () => {
     const { register, handleSubmit, reset } = useForm();
     const history = useHistory();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/destination', data)
+        axios.post('https://shrieking-crypt-42705.herokuapp.com/destination', data)
             .then(function (response) {
                 console.log(response);
             })

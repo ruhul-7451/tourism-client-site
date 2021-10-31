@@ -14,7 +14,7 @@ const MyBooking = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/booking', data)
+        axios.post('https://shrieking-crypt-42705.herokuapp.com/booking', data)
             .then(function (response) {
                 console.log(response);
             })
@@ -32,7 +32,7 @@ const MyBooking = () => {
         }
     }
     useEffect(() => {
-        const url = `http://localhost:5000/destination/${id}`
+        const url = `https://shrieking-crypt-42705.herokuapp.com/destination/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setFetchDetails(data))
