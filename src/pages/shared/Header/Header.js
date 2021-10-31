@@ -20,13 +20,13 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/upcomingTours">Upcoming Tours</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item as={Link} to="/">Show Destinations</NavDropdown.Item>
+                            <Nav.Link as={Link} to="/upcomingTours">Travel and Tours</Nav.Link>
+                            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                            {user.email ? <NavDropdown title="See More" id="collasible-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/addTourPlace">Add TourPlace</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item as={Link} to="/manageUsers">Manage Users</NavDropdown.Item>
-                            </NavDropdown>
+                            </NavDropdown> : <></>}
                         </Nav>
                         <Nav>
                             {user.email ? <Navbar.Text className="text-light">Hello!<span className="text-warning"> {user.displayName}</span></Navbar.Text> : <Navbar.Text></Navbar.Text>}

@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Context/AuthProvider';
+import Contact from './pages/Contact/Contact';
 import Destinations from './pages/Destinations/Destinations';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/upcomingTours">
               <ShowDestinations></ShowDestinations>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <PrivateRoute path="/addTourPlace">
               <Destinations></Destinations>
