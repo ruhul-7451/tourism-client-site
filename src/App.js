@@ -5,6 +5,7 @@ import Booking from './pages/Booking/Booking';
 import Destinations from './pages/Destinations/Destinations';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import MyBooking from './pages/MyBooking/MyBooking';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/shared/Footer/Footer';
 import Header from './pages/shared/Header/Header';
@@ -30,7 +31,7 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/destination">
+            <Route path="/addTourPlace">
               <Destinations></Destinations>
             </Route>
             <Route path="/showDestination">
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <Route path="/pickedDestination/:id">
               <DestinationDetails></DestinationDetails>
+            </Route>
+            <Route path="/myBooking/:id">
+              <MyBooking></MyBooking>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

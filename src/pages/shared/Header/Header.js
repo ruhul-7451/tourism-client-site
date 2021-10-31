@@ -14,18 +14,18 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="booking">Booking</Nav.Link>
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/booking">Booking</Nav.Link>
                             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item as={Link} to="showDestination">Show Destinations</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="destination">Add TourPlace</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/showDestination">Show Destinations</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/addTourPlace">Add TourPlace</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item as={Link} to="manageUsers">Manage Users</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/manageUsers">Manage Users</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to="mytrips">My Trips</Nav.Link>
-                            {user.email ? <Button onClick={logOut}>Logout</Button> : <Nav.Link as={Link} to="login">
+                            <Nav.Link as={Link} to="/myBooking">My Trips</Nav.Link>
+                            {user.email ? <Button onClick={logOut}>Logout</Button> : <Nav.Link as={Link} to="/login">
                                 Login
                             </Nav.Link>}
                         </Nav>

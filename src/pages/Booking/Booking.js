@@ -2,18 +2,22 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExchangeAlt, faMapMarkedAlt, faMapMarkerAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useHistory } from 'react-router';
 const location = <FontAwesomeIcon icon={faMapMarkerAlt} />
 const destination = <FontAwesomeIcon icon={faMapMarkedAlt} />
 const search = <FontAwesomeIcon icon={faSearch} />
 const alter = <FontAwesomeIcon icon={faExchangeAlt} />
 
 const Booking = () => {
+    const history = useHistory();
+
     const handleSearch = (e) => {
         e.preventDefault();
+        history.push('/showDestination');
     }
     return (
         <div className="bg-white  py-5">
-            <Col lg={10} className="bg-secondary rounded shadow mx-auto py-5">
+            <Col lg={10} className="bg-info rounded shadow mx-auto py-5">
                 <form className="row gy-2 gx-3 align-items-center justify-content-center">
                     <div className="col-auto">
                         <div className="input-group">
@@ -41,19 +45,7 @@ const Booking = () => {
                         </select>
                     </div>
                     <div className="col-auto">
-                        <select className="form-select" size="1" aria-label="size 3 select example">
-                            <option>Persons</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                        </select>
-                    </div>
-                    <div className="col-auto">
-                        <button onClick={handleSearch} type="submit" className="btn btn-warning">{search} Search</button>
+                        <button onClick={handleSearch} type="submit" className="btn btn-success">{search} Search</button>
                     </div>
                 </form>
             </Col>

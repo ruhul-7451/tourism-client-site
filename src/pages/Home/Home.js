@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Booking from '../Booking/Booking';
+import ShowDestinations from '../ShowDestinations/ShowDestinations';
 
 const Home = () => {
     return (
@@ -44,7 +45,15 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </section>
-            <Booking></Booking>
+
+            <section className="my-3">
+                <Booking></Booking>
+            </section>
+
+            <section>
+                <ShowDestinations></ShowDestinations>
+            </section>
+
         </div>
     );
 };
