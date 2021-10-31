@@ -3,11 +3,15 @@ import { Button, Col, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import useAuth from '../../Hooks/UseAuth';
+import { useHistory, useLocation } from 'react-router';
 const googleLogo = <FontAwesomeIcon icon={faGoogle} />
 
 const Login = () => {
+    const location = useLocation();
+    const history = useHistory();
     let [isChecked, SetIsChecked] = useState(false);
-    const { user, setUser, signInUsingGoogle, } = useAuth();
+    const { user, setUser, signInUsingGoogle, setIsLoading } = useAuth();
+    const redirectUrl = location.state?.from || "/home"
 
     const toggleChange = (e) => {
         e.target.checked ? SetIsChecked(true) : SetIsChecked(false)
@@ -18,8 +22,9 @@ const Login = () => {
         signInUsingGoogle()
             .then((result) => {
                 setUser(result.user);
+                history.push(redirectUrl);
                 console.log(user);
-            })
+            }).finally(() => setIsLoading(false));
     };
 
     return (

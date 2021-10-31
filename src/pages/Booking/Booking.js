@@ -13,10 +13,11 @@ const Booking = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        history.push('/showDestination');
+        history.push('/showResults');
     }
     return (
-        <div className="bg-white  py-5">
+        <div className="bg-white py-5">
+            <h2 className="text-center mb-3 p-1">Search from Our Package Tour plans  </h2>
             <Col lg={10} className="bg-info rounded shadow mx-auto py-5">
                 <form className="row gy-2 gx-3 align-items-center justify-content-center">
                     <div className="col-auto">

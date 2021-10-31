@@ -15,7 +15,7 @@ const ShowDestinations = () => {
     return (
         <div className=" px-5 py-3 mx-auto bg-white">
             <div className="bg-primary my-3 text-center shadow p-3 rounded">
-                <h3 className="text-light fw-bold text-uppercase mb-0">Choose Your Package</h3>
+                <h3 className="text-light fw-bold text-uppercase mb-0">Upcoming Tour Plans</h3>
             </div>
             <Row xs={1} md={2} lg={3} className="g-4">
                 {showPlaces.map(place => <SingleDestination key={place._id} place={place} />)}

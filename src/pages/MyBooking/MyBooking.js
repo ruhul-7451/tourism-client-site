@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Form, Row, Spinner } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -13,7 +14,16 @@ const MyBooking = () => {
 
     const onSubmit = data => {
         console.log(data);
+        axios.post('http://localhost:5000/booking', data)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         reset();
+        alert('Congrats!!! Your Booking request placed. \n Soon you will confirmed by our Customer Support, Thank You!');
+        history.push('/home');
     }
     const handleReturn = () => {
         const skip = window.confirm('You want to Skip booking?')
@@ -36,8 +46,8 @@ const MyBooking = () => {
 
     return (
         <div className=" bg-light p-3">
-            <h2 className="text-center">My booking Id is:{id} </h2>
-            <Form onSubmit={handleSubmit(onSubmit)} className="col-lg-6 mx-auto bg-white shadow p-5 rounded">
+            <h2 className="text-center text-danger p-3">Please Enter Details for Booking</h2>
+            <Form onSubmit={handleSubmit(onSubmit)} className="col-lg-6 mx-auto bg-white shadow p-5 rounded mb-5">
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>Name</Form.Label>

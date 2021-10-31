@@ -39,7 +39,7 @@ const Footer = () => {
                     <h5>Subscribe Newsletter</h5>
                     <Form className=" mx-auto mt-3">
                         <Form.Control type="email" placeholder="Enter email" />
-                        <Button className="w-100 my-1" variant="warning" type="submit">
+                        <Button className="w-100 my-1" variant="warning">
                             Submit
                         </Button>
                     </Form>
