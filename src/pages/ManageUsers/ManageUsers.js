@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
-import Booked from './Booked/Booked';
+import UserRequest from './UserRequest/UserRequest';
 
-const WatchBooking = () => {
-    const [orders, setOrders] = useState([]);
+const ManageUsers = () => {
+    const [userOrders, setUserOrders] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/booking')
             .then(res => res.json())
-            .then(data => setOrders(data))
+            .then(data => setUserOrders(data))
     }, [])
-    if (orders.length === 0) {
+    if (userOrders.length === 0) {
         return <div className="text-center p-5"><Spinner variant="secondary" animation="border" /> <h3 className="text-secondary py-3">Loading...</h3></div>;
     }
+    // console.log(userOrders);
     return (
-        <div className="py-5 m-5 ">
-            <h3 className="mb-3 bg-danger p-3 rounded text-light">You Have {orders.length} Tour Plans with us: </h3>
-            <Table className="  bg-white" striped bordered hover responsive>
+        <div className="col-lg-10 col-11 mx-auto">
+            <h3 className="text-center bg-danger text-dark m-3 p-3 rounded">Total <span className="text-white">[ {userOrders.length} ]</span> bookings Received</h3>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -24,16 +25,15 @@ const WatchBooking = () => {
                         <th>Package Name, (Seats)</th>
                         <th>Departure Date</th>
                         <th>Booking Status</th>
-                        <th>Action</th>
+                        <th>Confirm</th>
                     </tr>
                 </thead>
                 {
-                    orders.map(order => <Booked key={order._id} order={order}></Booked>)
+                    userOrders.map(userOrder => <UserRequest key={userOrder._id} userOrder={userOrder}></UserRequest>)
                 }
             </Table>
         </div>
-
     );
 };
 
-export default WatchBooking;
+export default ManageUsers;

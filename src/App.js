@@ -4,6 +4,7 @@ import AuthProvider from './Context/AuthProvider';
 import Destinations from './pages/Destinations/Destinations';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import ManageUsers from './pages/ManageUsers/ManageUsers';
 import MyBooking from './pages/MyBooking/MyBooking';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/shared/Footer/Footer';
@@ -47,6 +48,9 @@ function App() {
             <Route path="/watchBookings">
               <WatchBooking></WatchBooking>
             </Route>
+            <PrivateRoute path="/manageUsers">
+              <ManageUsers></ManageUsers>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
