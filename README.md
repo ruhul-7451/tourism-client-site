@@ -1,7 +1,7 @@
 # Book My Trip
 This project is a complete full stack site which handle dynamic data api loads and can perform CRUD operations, Firebase authentication, react-router, react bootstrap based designed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You will see on [Live Site](https://book-my-trip-2de56.web.app).
 
 ## Features of this project
 In the project directory, you can enjoy this features:
